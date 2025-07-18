@@ -47,9 +47,14 @@ function App() {
   }
 
   return (
-    <div className="flex h-screen bg-slate-50">
+    <div className="flex h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800 relative">
+      {/* Enhanced background overlay */}
+      <div className="absolute inset-0 bg-gradient-to-br from-slate-900/90 via-blue-900/80 to-slate-800/90 pointer-events-none"></div>
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(49,201,243,0.1)_0%,transparent_50%)] pointer-events-none"></div>
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(16,28,61,0.2)_0%,transparent_50%)] pointer-events-none"></div>
+      
       <Sidebar currentPage={currentPage} onPageChange={setCurrentPage} />
-      <main className="flex-1 overflow-auto">
+      <main className="flex-1 overflow-auto relative z-10">
         {renderCurrentPage()}
       </main>
     </div>
